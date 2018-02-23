@@ -6,7 +6,7 @@ function His($diff) {
         if($minuets=floor($diff/60)) {
                  $diff -= ($minuets*60);
         }
-        return "{$hours:{$minuets}:{$diff}";
+        return "{$hours}:{$minuets}:{$diff}";
 }
 function question($cmt) {
         return " <a href='javascript:alert(\"{$cmt}\")'>?</a> ";
@@ -21,8 +21,8 @@ function timediff($start,$end) {
         $end   = strtotime($end);
         if($start !== 1 && $end !== 1) {
                   if($end >= $start) {
-                    echo "<br /><br />Start: $end - $start = ".($end-$start."<br /><br />";
-                    return $end - $start;
+                          echo "<br /><br />Start: $end - $start =".($end-$start)."<br /><br />";
+                          return $end - $start;
                   }
         }
     return false;
