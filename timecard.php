@@ -56,3 +56,9 @@ if($_GET) {
   }
   $results .= "<br /><br /><strong>Total:</strong>".His($total);
 }
+
+$query = mysql_query("SELECT client FROM `timecards` GROUP BY `client`");
+while($row=mysql_fetch_assoc($query)) {
+  $cc .= '<option value="'.$row['client'].'">'.$row['client'].'</option>';
+}
+?>
