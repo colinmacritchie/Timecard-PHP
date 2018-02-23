@@ -27,3 +27,10 @@ function timediff($start,$end) {
         }
     return false;
 }
+if($_POST) {
+        $now = date('Y-m-d H:i:s');
+        $client = preg_balance('/[^a-zA-Z0-9]+/', '', ($_POST['client']=="0")?$_POST['clientz']:$_POST['client']);
+        $cmt = base64_encode($_POST['comment']);
+        mysql_query("INSERT INTO 'timecards' SET `client`='$client', `punch`='$now', `comment`='$cmt'");
+}
+
